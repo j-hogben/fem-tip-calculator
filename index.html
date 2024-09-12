@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./dist/styles.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="sr-only">Tip Calculator App</h1>
+      <img src="./images/logo.svg" alt="Splitter Brand Logo" />
+    </header>
+    <main>
+      <article>
+        <form class="form">
+          <!-- RIGHT SIDE -->
+          <div class="right">
+            <div class="form-group">
+              <div>
+                <label for="bill">Bill</label>
+                <p aria-live="polite" class="error"></p>
+              </div>
+              <div class="input-container">
+                <img src="./images/icon-dollar.svg" alt="" />
+                <input type="number" id="bill" required />
+              </div>
+            </div>
+
+            <fieldset class="form-group">
+              <legend>Select Tip %</legend>
+              <label>
+                <input
+                  type="radio"
+                  name="tipAmount"
+                  id="5tipAmount"
+                  value="5"
+                />
+                5%
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipAmount"
+                  id="10tipAmount"
+                  value="10"
+                />
+                10%
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipAmount"
+                  id="15tipAmount"
+                  value="15%"
+                />
+                15%
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipAmount"
+                  id="25tipAmount"
+                  value="25%"
+                />
+                25%
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipAmount"
+                  id="50tipAmount"
+                  value="50%"
+                />
+                50%
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipAmount"
+                  id="customTipAmount"
+                  value=""
+                />
+                Custom
+                <input type="number" id="customTip" value="" />
+              </label>
+            </fieldset>
+
+            <div class="form-group">
+              <div>
+                <label for="numOfPeople">Number of People</label>
+                <p aria-live="polite" class="error"></p>
+              </div>
+              <div class="input-container">
+                <img src="./images/icon-person.svg" alt="" />
+                <input type="number" id="numOfPeople" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- LEFT SIDE -->
+          <div class="results">
+            <div>
+              <div>
+                <p>Tip Amount</p>
+                <p>/ person</p>
+              </div>
+              <p id="tipAmountResult">$4.27</p>
+              <div>
+                <p>Total</p>
+                <p>/ person</p>
+              </div>
+              <p id="totalAmountResult">$32.79</p>
+            </div>
+            <button type="reset">RESET</button>
+          </div>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>
