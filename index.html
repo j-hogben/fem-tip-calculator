@@ -12,117 +12,185 @@
       href="./images/favicon-32x32.png"
     />
 
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="./dist/styles.css" />
 
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
-  <body>
+  <body class="bg-page font-SpaceMono leading-normal landscape-app:px-6">
     <header>
       <h1 class="sr-only">Tip Calculator App</h1>
-      <img src="./images/logo.svg" alt="Splitter Brand Logo" />
+      <img
+        class="mx-auto mb-10 mt-[3.125rem] lg:mb-[5.5rem] lg:mt-[10.1875rem]"
+        src="./images/logo.svg"
+        alt="Splitter Brand Logo"
+      />
     </header>
     <main>
       <article>
-        <form class="form">
-          <!-- RIGHT SIDE -->
-          <div class="right">
-            <div class="form-group">
-              <div>
-                <label for="bill">Bill</label>
-                <p aria-live="polite" class="error"></p>
+        <form
+          class="form mx-auto grid max-w-[640px] gap-8 rounded-t-card bg-white p-8 font-bold landscape-app:max-w-calculator landscape-app:grid-cols-2 landscape-app:rounded-card"
+        >
+          <!-- / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / INPUT SIDE -->
+          <div class="right flex flex-col gap-8 lg:gap-10 lg:p-4">
+            <div class="form-group cursor-pointer-all">
+              <div class="label-and-error">
+                <label for="bill" class="mb-1.5 text-label">Bill</label>
+                <p aria-live="polite" class="error text-error-text"></p>
               </div>
-              <div class="input-container">
+              <div class="input-container cursor-pointer">
                 <img src="./images/icon-dollar.svg" alt="" />
-                <input type="number" id="bill" required />
+                <input
+                  id="bill"
+                  class="text-2xl"
+                  type="number"
+                  autocomplete="off"
+                  required
+                />
               </div>
             </div>
 
+            <!-- / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / RADIO BUTTONS -->
             <fieldset class="form-group">
-              <legend>Select Tip %</legend>
-              <label>
-                <input
-                  type="radio"
-                  name="tipAmount"
-                  id="5tipAmount"
-                  value="5"
-                />
-                5%
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="tipAmount"
-                  id="10tipAmount"
-                  value="10"
-                />
-                10%
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="tipAmount"
-                  id="15tipAmount"
-                  value="15%"
-                />
-                15%
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="tipAmount"
-                  id="25tipAmount"
-                  value="25%"
-                />
-                25%
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="tipAmount"
-                  id="50tipAmount"
-                  value="50%"
-                />
-                50%
-              </label>
-              <label>
-                <input
-                  type="radio"
-                  name="tipAmount"
-                  id="customTipAmount"
-                  value=""
-                />
-                Custom
-                <input type="number" id="customTip" value="" />
-              </label>
+              <legend class="mb-4 text-label">Select Tip %</legend>
+              <div
+                class="radio-grid cursor-pointer-all grid grid-cols-2 gap-4 *:flex *:justify-center *:rounded-input *:bg-green-dark *:text-2xl *:text-white sm:grid-cols-3"
+              >
+                <!-- 5% -->
+                <label>
+                  <input
+                    type="radio"
+                    name="tipAmount"
+                    id="5tipAmount"
+                    value="5"
+                  />
+                  5%
+                </label>
+
+                <!-- 10% -->
+                <label>
+                  <input
+                    type="radio"
+                    name="tipAmount"
+                    id="10tipAmount"
+                    value="10"
+                  />
+                  10%
+                </label>
+
+                <!-- 15% -->
+                <label>
+                  <input
+                    type="radio"
+                    name="tipAmount"
+                    id="15tipAmount"
+                    value="15"
+                  />
+                  15%
+                </label>
+
+                <!-- 25% -->
+                <label>
+                  <input
+                    type="radio"
+                    name="tipAmount"
+                    id="25tipAmount"
+                    value="25"
+                  />
+                  25%
+                </label>
+
+                <!-- 50% -->
+                <label>
+                  <input
+                    type="radio"
+                    name="tipAmount"
+                    id="50tipAmount"
+                    value="50"
+                  />
+                  50%
+                </label>
+
+                <!-- CUSTOM TIP -->
+                <label class="input-container !bg-input !text-custom-label">
+                  <input
+                    type="radio"
+                    name="tipAmount"
+                    id="customTipAmount"
+                    value=""
+                  />
+                  Custom
+                  <input
+                    type="number"
+                    id="customTip"
+                    class="hidden"
+                    value=""
+                    autocomplete="off"
+                  />
+                </label>
+              </div>
             </fieldset>
 
-            <div class="form-group">
-              <div>
-                <label for="numOfPeople">Number of People</label>
-                <p aria-live="polite" class="error"></p>
+            <!-- / / / / / / / / / / / / / / / / / / / / / / / / / / / / / NUMBER OF PEOPLE -->
+            <div class="form-group cursor-pointer-all">
+              <div class="label-and-error">
+                <label for="numOfPeople" class="mb-1.5 text-label"
+                  >Number of People</label
+                >
+                <p aria-live="polite" class="error text-error-text"></p>
               </div>
               <div class="input-container">
                 <img src="./images/icon-person.svg" alt="" />
-                <input type="number" id="numOfPeople" required />
+                <input
+                  id="numOfPeople"
+                  class="text-2xl"
+                  type="number"
+                  autocomplete="off"
+                  required
+                />
               </div>
             </div>
           </div>
 
-          <!-- LEFT SIDE -->
-          <div class="results">
-            <div>
+          <!-- / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / RESULTS SIDE -->
+          <div
+            class="results flex flex-col justify-between rounded-results bg-green-dark p-6 lg:p-10"
+          >
+            <div class="mt-3 *:flex *:items-center *:justify-between lg:mt-0">
               <div>
-                <p>Tip Amount</p>
-                <p>/ person</p>
+                <div>
+                  <p class="text-white">Tip Amount</p>
+                  <p class="text-13 text-person">/ person</p>
+                </div>
+                <p
+                  id="tipAmountResult"
+                  class="text-right text-32 text-green-vivid sm:text-4xl lg:text-5xl lg:tracking-result"
+                >
+                  $4.27
+                </p>
               </div>
-              <p id="tipAmountResult">$4.27</p>
-              <div>
-                <p>Total</p>
-                <p>/ person</p>
+              <div class="mt-5">
+                <div>
+                  <p class="text-white">Total</p>
+                  <p class="text-13 text-person">/ person</p>
+                </div>
+                <p
+                  id="totalAmountResult"
+                  class="text-right text-32 text-green-vivid sm:text-4xl lg:text-5xl lg:tracking-result"
+                >
+                  $32.79
+                </p>
               </div>
-              <p id="totalAmountResult">$32.79</p>
             </div>
-            <button type="reset">RESET</button>
+            <button type="reset" class="btn">RESET</button>
           </div>
         </form>
       </article>
