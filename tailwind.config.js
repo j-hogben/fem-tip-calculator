@@ -15,6 +15,7 @@ module.exports = {
         32: "2rem",
       },
       letterSpacing: {
+        resultMob: "-0.67px",
         result: "-1px",
       },
       colors: {

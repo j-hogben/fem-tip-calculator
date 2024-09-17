@@ -5,11 +5,11 @@
 /* BASE */
 
 @layer base {
-  input[type="number"] {
-    @apply caret-green-vivid px-input-x w-full bg-transparent text-right outline-none;
+  input[type='number'] {
+    @apply w-full bg-transparent px-input-x text-right caret-green-vivid outline-none;
   }
 
-  input[name="tipAmount"] {
+  input[name='tipAmount'] {
     @apply sr-only;
   }
 }
@@ -17,15 +17,41 @@
 /* COMPONENTS */
 
 @layer components {
+  /* NUMBER INPUT CONTAINER STYLING */
   .input-container {
-    @apply bg-input has-[:focus-visible]:outline-green-vivid hover-fine:hover:outline-green-vivid has-[:checked]:outline-green-vivid rounded-input flex cursor-pointer items-center outline outline-2 -outline-offset-2 outline-transparent transition-all;
+    @apply flex cursor-pointer items-center rounded-input bg-input outline outline-2 -outline-offset-2 outline-transparent transition-all has-[:checked]:outline-green-vivid has-[:focus-visible]:outline-green-vivid hover-fine:hover:outline-green-vivid;
 
     img {
       @apply pl-input-x;
     }
 
     input {
-      @apply text-green-dark py-input-y;
+      @apply py-input-y text-green-dark;
+    }
+  }
+
+  /* RADIO BUTTON FOCUS */
+  .radio-focus,
+  #resetBtn {
+    @apply outline outline-2 outline-offset-4 outline-transparent;
+  }
+
+  .radio-focus {
+    @apply focus-within:outline-green-vivid;
+  }
+
+  #resetBtn {
+    @apply focus-visible:bg-green-pale focus-visible:outline-green-vivid;
+  }
+
+  /* CHECKED CUSTOM AMOUNT DISPLAY STYLING */
+  label.input-container:has(#customTip:checked) {
+    p {
+      @apply hidden;
+    }
+
+    #customTipAmount {
+      @apply !block;
     }
   }
 
@@ -34,7 +60,7 @@
   }
 
   .radio-grid label {
-    @apply hover-fine:hover:bg-green-pale has-[:checked]:bg-green-vivid py-input-y transition-all;
+    @apply py-input-y transition-all has-[:checked]:bg-green-vivid has-[:checked]:text-green-dark hover-fine:hover:bg-green-pale hover-fine:hover:text-green-dark;
   }
 
   .cursor-pointer-all * {
@@ -42,20 +68,20 @@
   }
 
   .btn {
-    @apply bg-green-vivid rounded-input hover-fine:hover:bg-green-pale mt-8 w-full py-[0.375rem] text-xl leading-[1.875] transition-all;
+    @apply mt-8 w-full rounded-input bg-green-vivid py-[0.375rem] text-xl leading-[1.875] text-green-dark transition-all hover-fine:hover:bg-green-pale;
   }
 }
 
 /* UTILITIES */
 
 @layer utilities {
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  input[type="number"] {
+  input[type='number'] {
     -moz-appearance: textfield;
   }
 }
