@@ -37,7 +37,7 @@
   }
 
   .radio-focus {
-    @apply focus-within:outline-green-vivid;
+    @apply hover-fine:focus-within:outline-green-vivid;
   }
 
   #resetBtn {
