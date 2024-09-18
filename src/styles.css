@@ -36,7 +36,7 @@
     @apply outline outline-2 outline-offset-4 outline-transparent;
   }
 
-  .radio-focus {
+  .radio-focus:has(input:focus-visible) {
     @apply hover-fine:focus-within:outline-green-vivid;
   }
 
