@@ -99,9 +99,11 @@
                 </label>
 
                 <!-- CUSTOM TIP -->
-                <label class="input-container !bg-input !text-custom-label">
-                  <input id="customTip" type="radio" name="tipAmount" value="" />
-                  <p>Custom</p>
+                <div class="input-container !bg-input">
+                  <label class="!bg-input !text-custom-label">
+                    <input id="customTip" type="radio" name="tipAmount" value="" />
+                    <p>Custom</p>
+                  </label>
                   <input
                     id="customTipAmount"
                     class="hidden !py-0"
@@ -111,7 +113,7 @@
                     inputmode="numeric"
                     max="1000"
                   />
-                </label>
+                </div>
               </div>
             </fieldset>
 
