@@ -46,7 +46,7 @@
 
   /* CHECKED CUSTOM AMOUNT DISPLAY STYLING */
   .input-container:has(#customTip:checked) {
-    p {
+    label {
       @apply hidden;
     }
 
